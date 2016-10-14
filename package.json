@@ -1,0 +1,35 @@
+{
+    "name": "3d-monitor-screen",
+    "version": "0.0.1",
+    "author": {
+        "name": "kobepeng",
+        "email": "yipeng.info"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pengkobe/3d-monitor-screen.git"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "koa": ">=0.7.0",
+        "koa-compress": ">=1.0.0",
+        "koa-logger": ">=1.0.0",
+        "koa-route": ">=1.1.4",
+        "koa-static": ">=1.0.0"
+    },
+    "devDependencies": {
+        "watch": ">=0.10.0",
+        "component-koa": ">=1.0.0",
+        "koa-json": ">=1.1.0",
+        "koa-livereload": ">=0.1.23",
+        "mocha": ">=1.0.0",
+        "supertest": "*",
+        "tiny-lr": ">=0.0.7"
+    },
+    "main": "server",
+    "scripts": {
+        "start": "node --harmony server/serve",
+        "start-devel": "supervisor --harmony --watch server server/serve",
+        "test": "mocha --harmony --reporter spec server/test/*.js"
+    }
+}
