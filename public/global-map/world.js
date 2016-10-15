@@ -14,8 +14,8 @@ function World(id){
     //常量
     this.constObj  = {
         ANGLE_INCLINED      : Math.PI / 6,
-        ROTATION_WORLD_RATE : 0.001,
-        ROTATION_CLOUD_RATE : 0.0012,
+        ROTATION_WORLD_RATE : 0.011,
+        ROTATION_CLOUD_RATE : 0.0112,
         FIELD_OF_VIEW       : 45,
         NEAR_CLIPPING_PLANE : 1,
         FAR_CLIPPING_PLANE  : 10,
@@ -82,9 +82,9 @@ World.prototype.initWorld = function(){
 
     var CONST = this.constObj;
 
-    var surfaceMap  = THREE.ImageUtils.loadTexture("global-map/img/earth_surface.jpg");
-    var normalMap   = THREE.ImageUtils.loadTexture("global-map/img/earth_normal.jpg");
-    var specularMap = THREE.ImageUtils.loadTexture("global-map/img/earth_specular.jpg");
+    var surfaceMap  = THREE.ImageUtils.loadTexture("img/earth_surface.jpg");
+    var normalMap   = THREE.ImageUtils.loadTexture("img/earth_normal.jpg");
+    var specularMap = THREE.ImageUtils.loadTexture("img/earth_specular.jpg");
 
     shader   = THREE.ShaderUtils.lib["normal"];
     uniforms = THREE.UniformsUtils.clone(shader.uniforms);
@@ -129,7 +129,7 @@ World.prototype.initCloud = function(){
 
     var CONST = this.constObj;
 
-    cloudsMap      = THREE.ImageUtils.loadTexture("global-map/img/earth_clouds.png");
+    cloudsMap      = THREE.ImageUtils.loadTexture("img/earth_clouds.png");
     cloudsMaterial = new THREE.MeshLambertMaterial({color: 0xffffff, map: cloudsMap, transparent: true});
 
     //云层球体网格(半径、纬线顶点数、经线顶点数)

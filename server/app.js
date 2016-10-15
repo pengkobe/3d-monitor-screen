@@ -16,7 +16,7 @@ var root = resolve(__dirname, '..');
 app.use(logger());
 
 app.use(compress());
-
+console.log("Starting server in development mode:"+ (process.env.NODE_ENV === 'development'));
 if (process.env.NODE_ENV === 'development') {
     console.log("Starting server in development mode");
     require('./devel');
